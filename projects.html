@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>3BHK apartment</title>
+	<link rel="stylesheet" href="navigationcode.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<!-- Navigation bar -->
+		<nav class="navbar">
+			<img src="logo/padmalogo.jpg" class="logo ">
+
+			<!-- ----------------- -->
+			<input type="checkbox" id="check">
+      		<label for="check" class="checkbtn">
+        	<i class="fas fa-bars"></i>
+      		</label>
+			<!-- ----------------- -->
+				<ul>
+					<li><a href="navigationcode.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="projects.html">PROJECTS</a></li>
+					<li><a href="contact.html">CONTACT</a></li> 
+				</ul>
+				<div class="hide"> 
+				<a href="contact.html" class="hero-btn">EXPLORE</a>
+				</div>
+					
+		</nav>
+
+		<div class="text-box">
+			<h2>PROJECTS</h2>
+			<br>
+			<br>
+			<h1> BLOOMING NEST</h1>
+		</div>
+	
+
+<!-- ------------------------------------------------------------------------------------------------------ -->
+	<br>
+	<br>
+	<div class="small-container">
+
+		<div class="story">
+			<h1><span class="colored-text"> </span> </h1>
+		
+		<br>
+
+		<!-- -------------------------------------------------------------------------------------------------- -->
+		<!-- <p class="box">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo sequi repudiandae, cumque incidunt quia suscipit architecto porro facilis commodi vitae magnam fugit repellat ipsa asperiores laudantium quam. Quos, molestias ea.</p> -->
+		<!-- --------------------------------------------------------------------------------------------------------- -->
+		
+
+		<!-- carousel -->
+
+	 <div class="carousel">
+		<div class="carousel-inner">
+			<div class="slide active">
+				<img src="images/padma101.jpg" alt="Image 1">
+			  </div>
+			  <div class="slide active">
+				<img src="images/padma102.jpg" alt="Image 1">
+			  </div>
+		  <div class="slide active">
+			<img src="images/flat101.jpg" alt="Image 1">
+		  </div>
+		  <div class="slide">
+			<img src="images/flat102.jpg" alt="Image 2">
+		  </div>
+		  <div class="slide">
+			<img src="images/flat103.jpg" alt="Image 3">
+		  </div>
+		  <!-- <div class="slide active">
+			<img src="flat104.jpg" alt="Image 1">
+		  </div> -->
+		  <div class="slide">
+			<img src="images/flat105.jpg" alt="Image 4">
+		  </div>
+		  <div class="slide">
+			<img src="images/flat106.jpg" alt="Image 5">
+		  </div>
+		  <div class="slide active">
+			<img src="images/flat107.jpg" alt="Image 6">
+		  </div>
+		  <div class="slide">
+			<img src="images/flat108.jpg" alt="Image 7">
+		  </div>
+		  <!-- Add more slides as needed -->
+		  <div class="slide">
+			<img src="images/interior101.jpg" alt="Image 8">
+		  </div>
+		  <div class="slide active">
+			<img src="images/interior102.jpg" alt="Image 9">
+		  </div>
+		  <div class="slide">
+			<img src="images/interior103.jpg" alt="Image 10">
+		  </div>
+		  <div class="slide">
+			<img src="images/interior104.jpg" alt="Image 11">
+		  </div>
+		  <div class="slide">
+			<img src="images/interior105.jpg" alt="Image 12">
+		  </div>
+		  <div class="slide active">
+			<img src="images/interior106.jpg" alt="Image 13">
+		  </div>
+		  <div class="slide">
+			<img src="images/interior107.jpg" alt="Image 14">
+		  </div>
+		  <div class="slide">
+			<img src="images/interior108.jpg" alt="Image 15">
+		  </div>
+		  
+		</div>
+
+		<button class="prev" onclick="prevSlide()">&#10094;</button>
+		<button class="next" onclick="nextSlide()">&#10095;</button>
+		<div class="indicators"></div>
+	  </div>
+	  </div>
+	  <!-- -------------------------------------------------------------------------------------------------- -->
+	  
+	  <div class="row"> 
+		<div class="about-col">
+			<h1 class="colored-heading">Features</h1>
+			<br>
+				<li>1322 Square Feet Units</li>
+				<br>
+				<li>8 min from ORR</li>
+				<br>
+				<li>5 min from Malls, Multiplexes,Dmart etc.</li>
+				<br>
+				<li>5 min from PVNR expressway</li>
+				<br>
+				<li>10 min from International Schools & Hospitals</li>
+				<br>
+		</div>	
+	
+			<div class="about-col"> 
+				<img src="images/padmablueprint.jpg" alt="Couldn't load the image">
+			</div>
+		</div>
+
+	</div>
+ <!-- </div> -->
+
+
+
+	  <script>
+		let slideIndex = 0;
+
+function showSlides() {
+  let slides = document.querySelectorAll('.slide');
+  let indicators = document.querySelector('.indicators');
+  indicators.innerHTML = '';
+  
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove('active');
+    if (i === slideIndex) {
+      slides[i].classList.add('active');
+    }
+
+    let indicator = document.createElement('span');
+    indicator.classList.add('indicator');
+    if (i === slideIndex) {
+      indicator.classList.add('active');
+    }
+    indicator.setAttribute('onclick', 'gotoSlide(' + i + ')');
+    indicators.appendChild(indicator);
+  }
+}
+
+function prevSlide() {
+  slideIndex--;
+  if (slideIndex < 0) {
+    slideIndex = document.querySelectorAll('.slide').length - 1;
+  }
+  showSlides();
+}
+
+function nextSlide() {
+  slideIndex++;
+  if (slideIndex >= document.querySelectorAll('.slide').length) {
+    slideIndex = 0;
+  }
+  showSlides();
+}
+
+function gotoSlide(index) {
+  slideIndex = index;
+  showSlides();
+}
+
+showSlides(); // Call showSlides to initially display the slides
+
+	  </script>
+
+  <!-- --------------------------------------------------------------------------------------------------	 -->
+	<!-- footer -->
+	<div class="footer">
+		<div class="container">
+
+			<div class="text-box"> 
+				<h2>READY TO FIND YOUR HOME?</h2>
+				<br>
+				<h1>Start Your Home Search Now </h1>
+				<br>
+				<a href="contact.html" class="hero-btn">EXPLORE</a>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>3BHK apartment</title>
+	<link rel="stylesheet" href="navigationcode.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<!-- Navigation bar -->
+		<nav class="navbar">
+			<img src="logo/padmalogo.jpg" class="logo ">
+
+			<!-- ----------------- -->
+			<input type="checkbox" id="check">
+      		<label for="check" class="checkbtn">
+        	<i class="fas fa-bars"></i>
+      		</label>
+			<!-- ----------------- -->
+
+				<ul>
+					<li><a href="navigationcode.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="projects.html">PROJECTS</a></li>
+					<li><a href="contact.html">CONTACT</a></li> 
+				</ul>
+				<div class="hide"> 
+				<a href="contact.html" class="hero-btn">EXPLORE</a>
+				</div>
+					
+		</nav>
+
+		<div class="text-box">
+			<h2>CONTACT</h2>
+			<br>
+			<br>
+			<h1> Get in Touch With Us</h1>
+		</div>
+	</div>
+	<!-- -------------------------------------------------------------------------------------------------- -->
+	<section class="contact">
+		<div class="row"> 
+			<div class="contact-col"> 
+		       <h1>Our Contact Information</h1>
+			   <p>Reach out to us for any queries or assistance.</p>
+			
+			   <!-- <p>Address:# 141, Vessella Meadows,Ibrahimbagh,Hyderabad – TS. 500031</p>
+			   <p>Phone:91-9949103687</p>
+			   <p>Email: raghukulesh@gmail.com</p> -->
+			   
+			   <div>
+				<i class="fas fa-map-marker-alt">ADDRESS</i>
+				 <p>#141, Vessella Meadows,Ibrahimbagh,Hyderabad – TS. 500031</p>
+			   </div>
+
+			   <div>
+				<i class="fas fa-phone-alt">PHONE</i>
+				 <p>91-9949103687</p>
+			   </div>
+			   
+			   <div>
+				<i class="fas fa-envelope">EMAIL</i>
+				 <p>raghukulesh@gmail.com</p>
+			   </div>
+
+			</div>
+
+			<div class="contact-col"> 
+				<h2>Contact Us</h2>
+				<div class="info">
+					<form id="contactForm" method="post">
+						<label for="name">Name:</label>
+						<input type="text" id="name" name="name" required>
+						<label for="email">Email:</label>
+						<input type="text" id="email" name="email" required>
+						<label for="message">Message:</label>
+						<textarea id="message" name="message" rows="4" required></textarea>
+						<input type="submit" value="Send">
+					</form>
+					<div id="responseMessage" style="display: none;"></div>
+				</div>
+			</div>
+			
+			<script>
+				document.getElementById("contactForm").addEventListener("submit", function(event) {
+					event.preventDefault(); // Prevent the form from submitting
+					
+					// Get form data
+					var formData = new FormData(this);
+					
+					// Construct mailto link with form data
+					var subject = "New Contact Form Submission";
+					var body = "Name: " + formData.get("name") + "\nEmail: " + formData.get("email") + "\nMessage: " + formData.get("message");
+					var mailtoLink = "mailto:raghukulesh@gmail.com" + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+					
+					// Open the default email client with the mailto link
+					window.location.href = mailtoLink;
+					
+					// Display response message (optional)
+					var responseMessage = document.getElementById("responseMessage");
+					responseMessage.style.display = "block";
+					responseMessage.textContent = "Thank you for your message, " + formData.get("name");
+					
+					// Reset form
+					this.reset();
+				});
+			</script>
+			<!-- <div class="contact-col"> 
+				<h2>Contact Us</h2>
+				<div class="info">
+					<form action="#" method="post" enctype="text/plain">
+
+						<label for="name">Name:</label>
+						<input type="text" id="name" name="name" required>
+						<label for="email">Email:</label>
+						<input type="text" id="email" name="email" required>
+						<label for="message">Message:</label>
+						<textarea id="message" name="message" rows="4" required></textarea>
+				
+						<input type="submit" value="Send">
+					</form>
+				</div>
+			</div>
+			 -->
+		</div>
+	</section>
+
+ <!-- --------------------------------------------------------------------------------------------------------- -->
+	<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			
+			<div class="text-box"> 
+				<h2>READY TO FIND YOUR HOME?</h2>
+				<br>
+				<h1>Start Your Home Search Now </h1>
+				<br>
+				<a href="contact.html" class="hero-btn">EXPLORE</a>
+			</div>
+				
+		</div>
+	</div>
+</body>
+</html>
